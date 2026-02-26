@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Kami – Batu Outbound</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ─── TOKENS ─── */
+        :root {
+            --forest: #1E4D2B;
+            --forest-mid: #2D6E3E;
+            --gold: #E8A020;
+            --gold-light: #F5C04A;
+            --dark: #0B1A0F;
+            --light: #F4F7F1;
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --radius: 1.25rem;
+        }
+
+        /* ─── BASE ─── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--dark);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ─── NAV ─── */
+        .navbar {
+            background: rgba(11, 26, 15, 0.95) !important;
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            color: #fff !important;
+        }
+
+        .navbar-brand span {
+            color: var(--gold);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: .82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .75) !important;
+            transition: color .2s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--gold) !important;
+        }
+
+        .btn-book {
+            background: var(--gold);
+            color: var(--dark) !important;
+            font-weight: 700;
+            font-size: .8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 50px;
+            padding: .45rem 1.4rem;
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 160, 32, .4);
+        }
+
+        /* ─── HERO ─── */
+        .inner-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(rgba(11, 26, 15, 0.8), rgba(11, 26, 15, 0.8)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=80') center/cover;
+            text-align: center;
+        }
+
+        .inner-title {
+            font-family: var(--font-display);
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb {
+            justify-content: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* ─── CONTENT ─── */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-label {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: .6rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            line-height: 1.05;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+
+        .about-text {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .vision-mission-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 100%;
+        }
+
+        .vision-mission-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .vision-mission-card h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: #050E07;
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .footer-brand span {
+            color: var(--gold);
+        }
+
+        .footer-desc {
+            font-size: .87rem;
+            color: rgba(255, 255, 255, .45);
+            line-height: 1.75;
+            margin-top: 1rem;
+        }
+
+        .footer-heading {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-link {
+            display: block;
+            font-size: .875rem;
+            color: rgba(255, 255, 255, .45);
+            text-decoration: none;
+            margin-bottom: .6rem;
+            transition: color .2s;
+        }
+
+        .footer-link:hover {
+            color: var(--gold);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: .8rem;
+            align-items: flex-start;
+            margin-bottom: .9rem;
+            font-size: .875rem;
+            color: rgba(255, 255, 255, .45);
+        }
+
+        .footer-contact-item i {
+            color: var(--gold);
+            margin-top: .1rem;
+            flex-shrink: 0;
+        }
+
+        .newsletter-input {
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: .75rem;
+            padding: .7rem 1rem;
+            color: #fff;
+            font-size: .875rem;
+            width: 100%;
+            outline: none;
+            transition: border .2s;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, .3);
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--gold);
+        }
+
+        .btn-newsletter {
+            background: var(--gold);
+            border: none;
+            border-radius: .75rem;
+            padding: .7rem 1.2rem;
+            color: var(--dark);
+            font-weight: 700;
+            font-size: .85rem;
+            transition: background .2s;
+        }
+
+        .btn-newsletter:hover {
+            background: var(--gold-light);
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, .55);
+            font-size: 1rem;
+            transition: background .2s, color .2s;
+            text-decoration: none;
+            margin-right: .5rem;
+        }
+
+        .social-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+            border-color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            padding-top: 1.5rem;
+            margin-top: 3rem;
+            font-size: .8rem;
+            color: rgba(255, 255, 255, .3);
+        }
+
+        /* ─── FLOATING BUTTONS ─── */
+        .floating-btns {
+            position: fixed;
+            bottom: 1.8rem;
+            right: 1.8rem;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+        }
+
+        .float-wa {
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, .45);
+            transition: transform .2s;
+        }
+
+        .float-wa:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        .float-top {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #fff;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: background .2s, opacity .3s, visibility .3s, transform .3s;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .float-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .float-top:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        /* ─── UTILS ─── */
+        @media (max-width: 991px) {
+            section {
+                padding: 4.5rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 3.5rem 0;
+            }
+
+            .inner-hero {
+                padding: 100px 0 40px;
+            }
+
+            .inner-title {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+            }
+
+            .section-title {
+                font-size: clamp(2rem, 8vw, 2.8rem);
+            }
+
+            footer {
+                padding: 3.5rem 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ─── NAVBAR ─── -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">BATU<span>OUTBOUND</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <i class="bi bi-list text-white fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 gap-2 mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 active" href="about.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn-book" href="https://wa.me/62895639068080" target="_blank">Hubungi
+                            Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ─── HERO ─── -->
+    <header class="inner-hero">
+        <div class="container">
+            <h1 class="inner-title">TENTANG KAMI</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span>Tentang Kami</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── STORY ─── -->
+    <section>
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6">
+                    <div class="section-label">Cerita Kami</div>
+                    <h2 class="section-title">Dedikasi Untuk Pengalaman Luar Biasa</h2>
+                    <div class="about-text">
+                        <p>Batu Outbound berdiri dengan visi untuk menjadi mitra terpercaya dalam pengembangan sumber
+                            daya manusia melalui metode experiential learning di alam terbuka. Berpusat di Kota Wisata
+                            Batu yang sejuk, kami telah melayani ratusan klien dari berbagai latar belakang perusahaan,
+                            instansi pemerintah, hingga lembaga pendidikan.</p>
+                        <p>Kami percaya bahwa pembelajaran terbaik terjadi saat seseorang keluar dari zona nyaman
+                            mereka. Itulah mengapa setiap program yang kami rancang tidak hanya fokus pada kesenangan,
+                            tetapi juga pada nilai-nilai inti seperti kepemimpinan, kerja sama tim, dan ketahanan
+                            mental.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                        alt="Team" class="w-100 rounded-4 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── VISION MISSION ─── -->
+    <section style="background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="vision-mission-card">
+                        <i class="bi bi-eye"></i>
+                        <h3>Visi Kami</h3>
+                        <p class="about-text">Menjadi penyedia layanan outbound dan training nomor satu di Jawa Timur
+                            yang mengedepankan profesionalisme, kreativitas, dan hasil yang berdampak nyata bagi setiap
+                            klien.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="vision-mission-card">
+                        <i class="bi bi-bullseye"></i>
+                        <h3>Misi Kami</h3>
+                        <ul class="about-text" style="padding-left: 20px;">
+                            <li>Menyediakan program outbound yang inovatif dan edukatif.</li>
+                            <li>Memberikan pelayanan terbaik dengan standar keamanan tinggi.</li>
+                            <li>Mendukung pengembangan potensi diri melalui simulasi petualangan.</li>
+                            <li>Berkontribusi positif pada ekosistem pariwisata di Kota Batu.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── WHY CHOOSE US ─── -->
+    <section>
+        <div class="container text-center">
+            <div class="section-label">Kenapa Kami?</div>
+            <h2 class="section-title">Alasan Memilih Batu Outbound</h2>
+            <div class="row g-4 mt-2">
+                <div class="col-md-4">
+                    <div class="p-4">
+                        <i class="bi bi-shield-check fs-1 text-gold mb-3" style="color:var(--gold);"></i>
+                        <h4>Legalitas & Keamanan</h4>
+                        <p class="about-text">Kami memiliki izin operasional resmi dan instruktur bersertifikat untuk
+                            memastikan keamanan Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4">
+                        <i class="bi bi-gear-wide-connected fs-1 text-gold mb-3" style="color:var(--gold);"></i>
+                        <h4>Custom Program</h4>
+                        <p class="about-text">Setiap program dapat disesuaikan dengan kebutuhan spesifik dan tujuan
+                            perusahaan Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4">
+                        <i class="bi bi-geo-alt fs-1 text-gold mb-3" style="color:var(--gold);"></i>
+                        <h4>Lokasi Strategis</h4>
+                        <p class="about-text">Bekerja sama dengan berbagai lokasi terbaik di Kota Batu untuk pengalaman
+                            maksimal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="footer-brand">BATU<span>OUTBOUND</span></div>
+                    <p class="footer-desc">Provider Outdoor & Indoor Training No. 1 di Batu Malang. Solusi profesional
+                        untuk kebutuhan Gathering dan Team Building Anda.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+                        <a href="https://wa.me/62895639068080" class="social-btn"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2 offset-lg-1">
+                    <div class="footer-heading">Tautan Langsung</div>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">Tentang Kami</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="#" class="footer-link">Paket Outbound</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <div class="footer-heading">Hubungi Kami</div>
+                    <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Basecamp Coban Talun, Kota
+                            Batu – Malang, Jawa Timur</span></div>
+                    <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>0895-6390-68080</span>
+                    </div>
+                    <div class="footer-contact-item"><i
+                            class="bi bi-envelope-fill"></i><span>info@batuoutbound.co.id</span></div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-heading">Newsletter</div>
+                    <p style="font-size:.87rem;color:rgba(255,255,255,.4);margin-bottom:.9rem;">Dapatkan info promo
+                        spesial setiap bulannya.</p>
+                    <div class="d-flex gap-2">
+                        <input class="newsletter-input" type="email" placeholder="Alamat Email" />
+                        <button class="btn-newsletter text-nowrap"><i class="bi bi-send-fill"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+                <span>© 2024 Batu Outbound Adventure. Hak cipta dilindungi undang-undang.</span>
+                <div class="d-flex gap-4">
+                    <a href="#" class="footer-link" style="margin:0">Kebijakan Privasi</a>
+                    <a href="#" class="footer-link" style="margin:0">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── FLOATING BUTTONS ─── -->
+    <div class="floating-btns">
+        <a href="https://wa.me/62895639068080" target="_blank" class="float-wa" title="Chat WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <div class="float-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+            <i class="bi bi-chevron-up"></i>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll & Floating top button effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 60) {
+                nav.style.background = 'rgba(11,26,15,0.97)';
+            } else {
+                nav.style.background = 'rgba(11,26,15,0.95)';
+            }
+
+            const floatTop = document.querySelector('.float-top');
+            if (floatTop) {
+                if (window.scrollY > 300) {
+                    floatTop.classList.add('show');
+                } else {
+                    floatTop.classList.remove('show');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

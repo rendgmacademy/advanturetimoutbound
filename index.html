@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batu Outbound – Spesialis Petualangan & Team Building</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ─── TOKENS ─── */
+        :root {
+            --forest: #1E4D2B;
+            --forest-mid: #2D6E3E;
+            --gold: #E8A020;
+            --gold-light: #F5C04A;
+            --dark: #0B1A0F;
+            --light: #F4F7F1;
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --radius: 1.25rem;
+        }
+
+        /* ─── BASE ─── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--dark);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ─── NAV ─── */
+        .navbar {
+            background: rgba(11, 26, 15, 0.7) !important;
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 1rem 0;
+            transition: background 0.3s;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            color: #fff !important;
+        }
+
+        .navbar-brand span {
+            color: var(--gold);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: .82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .75) !important;
+            transition: color .2s;
+        }
+
+        .nav-link:hover {
+            color: var(--gold) !important;
+        }
+
+        .btn-book {
+            background: var(--gold);
+            color: var(--dark) !important;
+            font-weight: 700;
+            font-size: .8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 50px;
+            padding: .45rem 1.4rem;
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 160, 32, .4);
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            transform: scale(1.05);
+            animation: heroZoom 18s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            to {
+                transform: scale(1.12);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(11, 26, 15, .92) 0%, rgba(11, 26, 15, .45) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 100px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            border: 1px solid rgba(232, 160, 32, .5);
+            color: var(--gold);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: .35rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            background: rgba(232, 160, 32, .08);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(5rem, 12vw, 10rem);
+            line-height: 0.9;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title .highlight {
+            color: var(--gold);
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, .75);
+            max-width: 480px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-primary-cta {
+            background: var(--forest-mid);
+            color: #fff;
+            border: none;
+            padding: .85rem 2.2rem;
+            border-radius: var(--radius);
+            font-weight: 700;
+            font-size: .95rem;
+            letter-spacing: .5px;
+            transition: background .2s, transform .2s, box-shadow .2s;
+        }
+
+        .btn-primary-cta:hover {
+            background: var(--forest);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45, 110, 62, .5);
+            color: #fff;
+        }
+
+        .btn-outline-cta {
+            background: rgba(255, 255, 255, .08);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, .25);
+            padding: .85rem 2.2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: .95rem;
+            backdrop-filter: blur(8px);
+            transition: background .2s, transform .2s;
+        }
+
+        .btn-outline-cta:hover {
+            background: rgba(255, 255, 255, .18);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .4rem;
+            color: rgba(255, 255, 255, .5);
+            font-size: .7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(var(--gold), transparent);
+            animation: scrollLine 1.8s ease-in-out infinite;
+        }
+
+        @keyframes scrollLine {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scaleY(1)
+            }
+
+            50% {
+                opacity: .3;
+                transform: scaleY(.5)
+            }
+        }
+
+        /* ─── STATS STRIP ─── */
+        .stats-strip {
+            background: var(--gold);
+            padding: 1.2rem 0;
+            overflow: hidden;
+        }
+
+        .stats-strip .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--dark);
+        }
+
+        .stat-item .num {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .stat-item .label {
+            font-size: .78rem;
+            font-weight: 600;
+            line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(11, 26, 15, .2);
+        }
+
+        /* ─── SECTION SHARED ─── */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-label {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: .6rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            line-height: 1.05;
+            letter-spacing: 1px;
+        }
+
+        /* ─── SERVICES ─── */
+        .services-section {
+            background: #0F1F12;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: var(--radius);
+            padding: 2.2rem;
+            text-align: center;
+            transition: transform .3s, background .3s, border-color .3s, box-shadow .3s;
+            cursor: default;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, .08);
+            border-color: rgba(232, 160, 32, .3);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
+        }
+
+        .service-icon {
+            width: 68px;
+            height: 68px;
+            border-radius: 18px;
+            background: rgba(232, 160, 32, .12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.4rem;
+            font-size: 2rem;
+            color: var(--gold);
+            transition: background .3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .service-card h5 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            margin-bottom: .6rem;
+        }
+
+        .service-card p {
+            font-size: .88rem;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ─── PACKAGES ─── */
+        .packages-section {
+            background: var(--dark);
+        }
+
+        .pkg-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            height: 480px;
+            cursor: pointer;
+        }
+
+        .pkg-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .pkg-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .pkg-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .88) 0%, rgba(0, 0, 0, .1) 55%, transparent 100%);
+        }
+
+        .pkg-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.8rem;
+            transform: translateY(8px);
+            transition: transform .3s;
+        }
+
+        .pkg-card:hover .pkg-content {
+            transform: translateY(0);
+        }
+
+        .pkg-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            font-size: .65rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: .25rem .7rem;
+            border-radius: 50px;
+            margin-bottom: .7rem;
+        }
+
+        .pkg-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            line-height: 1;
+            letter-spacing: 1px;
+            margin-bottom: .5rem;
+        }
+
+        .pkg-desc {
+            font-size: .83rem;
+            color: rgba(255, 255, 255, .7);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* ─── CTA BANNER ─── */
+        .cta-banner {
+            background: var(--forest);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at top right, rgba(232, 160, 32, .15) 0%, transparent 60%);
+        }
+
+        .cta-banner .big-text {
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 10vw, 9rem);
+            opacity: .04;
+            position: absolute;
+            bottom: -1rem;
+            right: -1rem;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .cta-banner h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .btn-cta-wa {
+            background: #fff;
+            color: var(--forest) !important;
+            font-weight: 800;
+            font-size: .9rem;
+            letter-spacing: .5px;
+            padding: .85rem 2.2rem;
+            border-radius: var(--radius);
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .btn-cta-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+        }
+
+        /* ─── ABOUT ─── */
+        .about-section {
+            background: #0F1F12;
+        }
+
+        .about-img-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .about-img-grid img {
+            border-radius: var(--radius);
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .about-img-grid img {
+            height: 250px;
+            margin: 0 !important;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            margin-bottom: .8rem;
+        }
+
+        .check-item i {
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        .check-item span {
+            font-weight: 500;
+            color: rgba(255, 255, 255, .85);
+        }
+
+        /* ─── WHY OUTBOUND ─── */
+        .why-section {
+            background: var(--dark);
+        }
+
+        .why-img {
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .why-img img {
+            width: 100%;
+            border-radius: var(--radius);
+            transition: transform .6s;
+        }
+
+        .why-img:hover img {
+            filter: saturate(1) brightness(1);
+        }
+
+        .exp-badge {
+            position: absolute;
+            bottom: -1.5rem;
+            right: -1.5rem;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 1.5rem 2rem;
+            border-radius: var(--radius);
+        }
+
+        .exp-badge .num {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            line-height: 1;
+        }
+
+        .exp-badge .lbl {
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .why-icon {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            background: rgba(255, 255, 255, .06);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--gold);
+        }
+
+        .why-item h5 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            letter-spacing: .5px;
+            margin-bottom: .35rem;
+        }
+
+        .why-item p {
+            font-size: .88rem;
+            color: rgba(255, 255, 255, .5);
+            margin: 0;
+            line-height: 1.65;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: #050E07;
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .footer-brand span {
+            color: var(--gold);
+        }
+
+        .footer-desc {
+            font-size: .87rem;
+            color: rgba(255, 255, 255, .45);
+            line-height: 1.75;
+            margin-top: 1rem;
+        }
+
+        .footer-heading {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-link {
+            display: block;
+            font-size: .875rem;
+            color: rgba(255, 255, 255, .45);
+            text-decoration: none;
+            margin-bottom: .6rem;
+            transition: color .2s;
+        }
+
+        .footer-link:hover {
+            color: var(--gold);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: .8rem;
+            align-items: flex-start;
+            margin-bottom: .9rem;
+            font-size: .875rem;
+            color: rgba(255, 255, 255, .45);
+        }
+
+        .footer-contact-item i {
+            color: var(--gold);
+            margin-top: .1rem;
+            flex-shrink: 0;
+        }
+
+        .newsletter-input {
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: .75rem;
+            padding: .7rem 1rem;
+            color: #fff;
+            font-size: .875rem;
+            width: 100%;
+            outline: none;
+            transition: border .2s;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, .3);
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--gold);
+        }
+
+        .btn-newsletter {
+            background: var(--gold);
+            border: none;
+            border-radius: .75rem;
+            padding: .7rem 1.2rem;
+            color: var(--dark);
+            font-weight: 700;
+            font-size: .85rem;
+            transition: background .2s;
+        }
+
+        .btn-newsletter:hover {
+            background: var(--gold-light);
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, .55);
+            font-size: 1rem;
+            transition: background .2s, color .2s;
+            text-decoration: none;
+            margin-right: .5rem;
+        }
+
+        .social-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+            border-color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            padding-top: 1.5rem;
+            margin-top: 3rem;
+            font-size: .8rem;
+            color: rgba(255, 255, 255, .3);
+        }
+
+        /* ─── FLOATING BUTTONS ─── */
+        .floating-btns {
+            position: fixed;
+            bottom: 1.8rem;
+            right: 1.8rem;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+        }
+
+        .float-wa {
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, .45);
+            transition: transform .2s;
+        }
+
+        .float-wa:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        .float-top {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #fff;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: background .2s, opacity .3s, visibility .3s, transform .3s;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .float-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .float-top:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        /* ─── UTILS ─── */
+        @media (max-width: 991px) {
+            section {
+                padding: 4.5rem 0;
+            }
+
+            .cta-banner .container {
+                padding: 4rem 0 !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 3.5rem 0;
+            }
+
+            .hero-title {
+                font-size: clamp(3rem, 11vw, 4rem);
+            }
+
+            .section-title {
+                font-size: clamp(2rem, 8vw, 2.5rem);
+            }
+
+            .about-img-grid {
+                gap: 0.5rem;
+            }
+
+            .about-img-grid img {
+                height: 150px !important;
+            }
+
+            .pkg-card {
+                height: 280px;
+            }
+
+            .pkg-title {
+                font-size: 1.15rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .pkg-desc {
+                font-size: 0.75rem;
+                line-height: 1.3;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .pkg-content {
+                padding: 1rem;
+            }
+
+            .pkg-badge {
+                font-size: 0.55rem;
+                padding: 0.2rem 0.5rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .exp-badge {
+                position: static;
+                display: inline-block;
+                margin-top: 1.5rem;
+            }
+
+            footer {
+                padding: 3rem 0 1.5rem;
+            }
+
+            .stats-strip .num {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ─── NAVBAR ─── -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">BATU<span>OUTBOUND</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <i class="bi bi-list text-white fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 gap-2 mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="about.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn-book" href="https://wa.me/62895639068080" target="_blank">Hubungi
+                            Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-tag"><i class="bi bi-geo-alt-fill me-1"></i>#1 Adventure Provider in Batu Malang
+                    </div>
+                    <h1 class="hero-title">
+                        AMAZING
+                        <span class="highlight">ADVENTURE</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Tingkatkan semangat tim Anda di jantung pegunungan Jawa Timur. Outbound profesional, pembangunan
+                        tim, dan perjalanan petualangan yang dirancang untuk keunggulan.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#packages" class="btn btn-primary-cta">
+                            Jelajahi Paket <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                        <a href="https://wa.me/62895639068080" target="_blank" class="btn btn-outline-cta">
+                            <i class="bi bi-chat-dots me-2"></i>Konsultasi Gratis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Gulir</span>
+        </div>
+    </section>
+
+    <!-- ─── STATS STRIP ─── -->
+    <div class="stats-strip">
+        <div class="container">
+            <div class="row justify-content-center align-items-center text-center g-4">
+                <div class="col-6 col-lg-3">
+                    <div class="stat-item justify-content-center">
+                        <span class="num">10+</span>
+                        <span class="label">Tahun<br>Pengalaman</span>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-item justify-content-center">
+                        <span class="num">500+</span>
+                        <span class="label">Acara<br>Selesai</span>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-item justify-content-center">
+                        <span class="num">20K+</span>
+                        <span class="label">Peserta<br>Puas</span>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-item justify-content-center">
+                        <span class="num">4.9</span>
+                        <span class="label">Rating<br>Google</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── SERVICES ─── -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="section-label">Apa Yang Kami Tawarkan</div>
+                <h2 class="section-title">Layanan Utama</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="service-card h-100">
+                        <div class="service-icon"><i class="bi bi-controller"></i></div>
+                        <h5>Fun Games</h5>
+                        <p>Kegiatan seru yang dirancang untuk menyegarkan pikiran dan membangun kegembiraan dalam tim.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="service-card h-100">
+                        <div class="service-icon"><i class="bi bi-people-fill"></i></div>
+                        <h5>Pembangunan Tim</h5>
+                        <p>Kegiatan intensif yang fokus pada peningkatan keterampilan komunikasi dan kolaborasi.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="service-card h-100">
+                        <div class="service-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+                        <h5>Motivasi</h5>
+                        <p>Sesi inspiratif untuk meningkatkan moral dan semangat pribadi melalui pembelajaran
+                            eksperiensial.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="service-card h-100">
+                        <div class="service-icon"><i class="bi bi-trophy-fill"></i></div>
+                        <h5>Kepemimpinan</h5>
+                        <p>Mengembangkan naluri kepemimpinan yang efektif di bawah simulasi tekanan yang terkendali.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── PACKAGES ─── -->
+    <section class="packages-section" id="packages">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3">
+                <div>
+                    <div class="section-label">Paling Banyak Diminta</div>
+                    <h2 class="section-title mb-0">Paket Terlaris</h2>
+                </div>
+                <a href="#" class="text-decoration-none" style="color:var(--gold);font-weight:700;font-size:.9rem;">
+                    Lihat Semua <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-6 col-lg-3">
+                    <div class="pkg-card">
+                        <img src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?auto=format&fit=crop&w=800&q=80"
+                            alt="Outbound Hemat" />
+                        <div class="pkg-overlay"></div>
+                        <div class="pkg-content">
+                            <span class="pkg-badge">Terpopuler</span>
+                            <div class="pkg-title">Outbound Hemat</div>
+                            <p class="pkg-desc">Paket fun games lengkap dengan fasilitas standar dengan harga
+                                terjangkau.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-6 col-lg-3">
+                    <div class="pkg-card">
+                        <img src="https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8?auto=format&fit=crop&w=800&q=80"
+                            alt="Jalur Offroad" />
+                        <div class="pkg-overlay"></div>
+                        <div class="pkg-content">
+                            <div class="pkg-title">Jalur Offroad</div>
+                            <p class="pkg-desc">Jelajahi medan tangguh Coban Talun dengan petualangan Jeep 4x4 kami.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-6 col-lg-3">
+                    <div class="pkg-card">
+                        <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=80"
+                            alt="Paket Paintball" />
+                        <div class="pkg-overlay"></div>
+                        <div class="pkg-content">
+                            <div class="pkg-title">Paket Paintball</div>
+                            <p class="pkg-desc">Strategi dan adrenalin di hutan. Sempurna untuk kompetisi tim.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-6 col-lg-3">
+                    <div class="pkg-card">
+                        <img src="images/Rafting di Sungai Brantas Batu Malang.webp" alt="Rafting Adventure" />
+                        <div class="pkg-overlay"></div>
+                        <div class="pkg-content">
+                            <div class="pkg-title">Rafting Adventure</div>
+                            <p class="pkg-desc">Tantang jeram sungai dan nikmati pemandangan indah Kota Batu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── CTA BANNER ─── -->
+    <section class="cta-banner py-0" id="consult">
+        <div class="container py-6" style="padding:5rem 0;">
+            <div class="row align-items-center gy-5 position-relative">
+                <div class="big-text">OUTBOUND</div>
+                <div class="col-lg-6">
+                    <div class="section-label">Mari Berkolaborasi</div>
+                    <h2 class="text-white mb-4">Konsultasikan Kebutuhan<br>Tim Anda Bersama Kami</h2>
+                    <p class="mb-4"
+                        style="color:rgba(255,255,255,.75);font-size:1rem;line-height:1.75;max-width:480px;">
+                        Kami bergerak di bidang Provider Outdoor & Indoor Training yang menangani kegiatan Gathering &
+                        Outbound Team Building di Batu Malang. Mari ciptakan pengalaman yang tak terlupakan bersama.
+                    </p>
+                    <a href="https://wa.me/62895639068080" target="_blank" class="btn btn-cta-wa">
+                        <i class="bi bi-whatsapp me-2 text-success"></i>Dapatkan Proposal Gratis
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+                                alt="Team 1" class="w-100 rounded-4 shadow-lg" style="height:250px;object-fit:cover;" />
+                        </div>
+                        <div class="col-6">
+                            <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=80"
+                                alt="Team 2" class="w-100 rounded-4 shadow-lg" style="height:250px;object-fit:cover;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── ABOUT ─── -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="section-label">Tentang Kami</div>
+                    <h2 class="section-title mb-4">Ahli dalam Pembelajaran Eksperiensial</h2>
+                    <p class="mb-4" style="color:rgba(255,255,255,.6);font-size:.95rem;line-height:1.8;">
+                        Kami berdiri sejak 2010 yang berlokasi di Basecamp Coban Talun Batu. Berpengalaman menangani
+                        kegiatan Outbound Team Building baik dari Perusahaan, Instansi, Lembaga Pendidikan maupun BUMN.
+                    </p>
+                    <div class="mb-4">
+                        <div class="check-item"><i class="bi bi-check-circle-fill"></i><span>Profesional &
+                                Bersertifikat</span></div>
+                        <div class="check-item"><i class="bi bi-check-circle-fill"></i><span>Legalitas Resmi</span>
+                        </div>
+                        <div class="check-item"><i class="bi bi-check-circle-fill"></i><span>Area Pelatihan Terbuka
+                                Pribadi</span></div>
+                    </div>
+                    <a href="#" class="btn d-inline-flex align-items-center gap-2"
+                        style="background:#E53E3E;color:#fff;border-radius:.75rem;padding:.8rem 1.8rem;font-weight:700;">
+                        <i class="bi bi-play-circle-fill"></i>Tonton Profil Kami
+                    </a>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="about-img-grid">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80"
+                            alt="Activity 1" />
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=600&q=80"
+                            alt="Activity 2" />
+                        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80"
+                            alt="Activity 3" />
+                        <img src="https://images.unsplash.com/photo-1533560904424-a0c61dc306fc?auto=format&fit=crop&w=600&q=80"
+                            alt="Activity 4" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── WHY OUTBOUND ─── -->
+    <section class="why-section">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <div class="section-label">Kenapa Harus</div>
+                    <h2 class="section-title">Outbound?</h2>
+                    <p class="mt-3 mx-auto"
+                        style="max-width:560px;color:rgba(255,255,255,.5);font-size:.97rem;line-height:1.75;">
+                        Outbound bukan sekadar kegiatan di luar ruangan, melainkan <em>"out of boundaries"</em> —
+                        melampaui batasan diri untuk menyegarkan kembali fisik dan pikiran.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-5">
+                    <div class="why-img position-relative">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80"
+                            alt="Team Happy" />
+                        <div class="exp-badge d-none d-md-block">
+                            <div class="num">10+</div>
+                            <div class="lbl">Tahun Pengalaman</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 ps-lg-5">
+                    <div class="why-item">
+                        <div class="why-icon"><i class="bi bi-stars"></i></div>
+                        <div>
+                            <h5>Penyegaran Mental</h5>
+                            <p>Melepaskan penat dari rutinitas kerja harian melalui metode simulasi permainan yang
+                                menyenangkan dan bermakna.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon"><i class="bi bi-people"></i></div>
+                        <div>
+                            <h5>Sinergi Tim</h5>
+                            <p>Membangun korelasi permainan yang bermakna untuk menumbuhkan kerjasama tim yang solid dan
+                                terpercaya.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                        <div>
+                            <h5>Peningkatan Kinerja</h5>
+                            <p>Mendorong motivasi dan rasa percaya diri untuk mencapai target perusahaan yang lebih
+                                besar dan berarti.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="container">
+            <div class="row gy-5">
+                <!-- Brand -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="footer-brand">BATU<span>OUTBOUND</span></div>
+                    <p class="footer-desc">Provider Outdoor & Indoor Training No. 1 di Batu Malang. Solusi profesional
+                        untuk kebutuhan Gathering dan Team Building Anda.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+                        <a href="https://wa.me/62895639068080" class="social-btn"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <!-- Links -->
+                <div class="col-6 col-lg-2 offset-lg-1">
+                    <div class="footer-heading">Tautan Langsung</div>
+                    <a href="#" class="footer-link">Promo Bulan Ini</a>
+                    <a href="#" class="footer-link">Paket Outbound</a>
+                    <a href="#" class="footer-link">Offroad & Petualangan</a>
+                    <a href="#" class="footer-link">Arena Paintball</a>
+                    <a href="#" class="footer-link">Paket Bundling</a>
+                </div>
+                <!-- Contact -->
+                <div class="col-6 col-lg-2">
+                    <div class="footer-heading">Hubungi Kami</div>
+                    <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Basecamp Coban Talun, Kota
+                            Batu – Malang, Jawa Timur</span></div>
+                    <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>0895-6390-68080</span>
+                    </div>
+                    <div class="footer-contact-item"><i
+                            class="bi bi-envelope-fill"></i><span>info@batuoutbound.co.id</span></div>
+                </div>
+                <!-- Newsletter -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-heading">Newsletter</div>
+                    <p style="font-size:.87rem;color:rgba(255,255,255,.4);margin-bottom:.9rem;">Dapatkan info promo
+                        spesial setiap bulannya.</p>
+                    <div class="d-flex gap-2">
+                        <input class="newsletter-input" type="email" placeholder="Alamat Email" />
+                        <button class="btn-newsletter text-nowrap"><i class="bi bi-send-fill"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+                <span>© 2024 Batu Outbound Adventure. Hak cipta dilindungi undang-undang.</span>
+                <div class="d-flex gap-4">
+                    <a href="#" class="footer-link" style="margin:0">Kebijakan Privasi</a>
+                    <a href="#" class="footer-link" style="margin:0">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── FLOATING BUTTONS ─── -->
+    <div class="floating-btns">
+        <a href="https://wa.me/62895639068080" target="_blank" class="float-wa" title="Chat WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <div class="float-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+            <i class="bi bi-chevron-up"></i>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 60) {
+                nav.style.background = 'rgba(11,26,15,0.97)';
+            } else {
+                nav.style.background = 'rgba(11,26,15,0.7)';
+            }
+
+            // Floating top button effect
+            const floatTop = document.querySelector('.float-top');
+            if (floatTop) {
+                if (window.scrollY > 300) {
+                    floatTop.classList.add('show');
+                } else {
+                    floatTop.classList.remove('show');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

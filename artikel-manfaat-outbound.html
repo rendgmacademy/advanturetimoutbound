@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 Manfaat Outbound bagi Karyawan Perusahaan – Batu Outbound</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --forest: #1E4D2B;
+            --forest-mid: #2D6E3E;
+            --gold: #E8A020;
+            --gold-light: #F5C04A;
+            --dark: #0B1A0F;
+            --light: #F4F7F1;
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --radius: 1.25rem;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--dark);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        .navbar {
+            background: rgba(11, 26, 15, 0.95) !important;
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            color: #fff !important;
+        }
+
+        .navbar-brand span {
+            color: var(--gold);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: .82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .75) !important;
+            transition: color .2s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--gold) !important;
+        }
+
+        .btn-book {
+            background: var(--gold);
+            color: var(--dark) !important;
+            font-weight: 700;
+            font-size: .8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 50px;
+            padding: .45rem 1.4rem;
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 160, 32, .4);
+        }
+
+        /* HERO */
+        .article-hero {
+            padding: 140px 0 60px;
+            background: linear-gradient(rgba(11, 26, 15, 0.85), rgba(11, 26, 15, 0.85)),
+                url('https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+
+        .article-hero .breadcrumb {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-hero .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        /* CONTENT */
+        .article-body {
+            padding: 5rem 0;
+        }
+
+        .article-content {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .article-content p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin: 2.5rem 0 1rem;
+            color: #fff;
+        }
+
+        .article-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin: 2rem 0 0.8rem;
+            color: var(--gold);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content img {
+            width: 100%;
+            border-radius: var(--radius);
+            margin: 2rem 0;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            background: rgba(232, 160, 32, 0.08);
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .article-content blockquote p {
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* SHARE */
+        .share-bar {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 0;
+            margin: 3rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .share-bar span {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .share-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background .2s, color .2s;
+        }
+
+        .share-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+            border-color: var(--gold);
+        }
+
+        /* RELATED */
+        .related-section {
+            background: #0F1F12;
+            padding: 5rem 0;
+        }
+
+        .related-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s;
+            height: 100%;
+        }
+
+        .related-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .related-card .card-body {
+            padding: 1.5rem;
+        }
+
+        .related-card h5 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-card h5 a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .related-card h5 a:hover {
+            color: var(--gold);
+        }
+
+        .related-card p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050E07;
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .footer-brand span {
+            color: var(--gold);
+        }
+
+        .footer-desc {
+            font-size: .87rem;
+            color: rgba(255, 255, 255, .45);
+            line-height: 1.75;
+            margin-top: 1rem;
+        }
+
+        .footer-heading {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-link {
+            display: block;
+            font-size: .875rem;
+            color: rgba(255, 255, 255, .45);
+            text-decoration: none;
+            margin-bottom: .6rem;
+            transition: color .2s;
+        }
+
+        .footer-link:hover {
+            color: var(--gold);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: .8rem;
+            align-items: flex-start;
+            margin-bottom: .9rem;
+            font-size: .875rem;
+            color: rgba(255, 255, 255, .45);
+        }
+
+        .footer-contact-item i {
+            color: var(--gold);
+            margin-top: .1rem;
+            flex-shrink: 0;
+        }
+
+        .newsletter-input {
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: .75rem;
+            padding: .7rem 1rem;
+            color: #fff;
+            font-size: .875rem;
+            width: 100%;
+            outline: none;
+            transition: border .2s;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, .3);
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--gold);
+        }
+
+        .btn-newsletter {
+            background: var(--gold);
+            border: none;
+            border-radius: .75rem;
+            padding: .7rem 1.2rem;
+            color: var(--dark);
+            font-weight: 700;
+            font-size: .85rem;
+            transition: background .2s;
+        }
+
+        .btn-newsletter:hover {
+            background: var(--gold-light);
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, .55);
+            font-size: 1rem;
+            transition: background .2s, color .2s;
+            text-decoration: none;
+            margin-right: .5rem;
+        }
+
+        .social-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+            border-color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            padding-top: 1.5rem;
+            margin-top: 3rem;
+            font-size: .8rem;
+            color: rgba(255, 255, 255, .3);
+        }
+
+        /* FLOATING */
+        .floating-btns {
+            position: fixed;
+            bottom: 1.8rem;
+            right: 1.8rem;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+        }
+
+        .float-wa {
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, .45);
+            transition: transform .2s;
+        }
+
+        .float-wa:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        .float-top {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #fff;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: background .2s, opacity .3s, visibility .3s, transform .3s;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .float-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .float-top:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        /* ─── UTILS ─── */
+        @media (max-width: 991px) {
+            .article-body {
+                padding: 4.5rem 0;
+            }
+
+            .related-section {
+                padding: 4.5rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .article-hero {
+                padding: 100px 0 40px;
+            }
+
+            .article-hero h1 {
+                font-size: clamp(2.2rem, 8vw, 3rem);
+            }
+
+            .article-meta {
+                gap: 1rem;
+                font-size: 0.75rem;
+            }
+
+            .article-body {
+                padding: 3rem 0;
+            }
+
+            .article-content img {
+                margin: 1.5rem 0;
+            }
+
+            .related-section {
+                padding: 3.5rem 0;
+            }
+
+            footer {
+                padding: 3.5rem 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">BATU<span>OUTBOUND</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <i class="bi bi-list text-white fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 gap-2 mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="about.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 active" href="blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn-book" href="https://wa.me/62895639068080" target="_blank">Hubungi
+                            Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="article-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>&nbsp; / &nbsp;<a href="blog.html">Blog</a>&nbsp; / &nbsp;<span>Manfaat
+                    Outbound</span>
+            </div>
+            <div class="article-meta">
+                <span><i class="bi bi-calendar3 me-2"></i>24 Feb 2024</span>
+                <span><i class="bi bi-person me-2"></i>Admin</span>
+                <span><i class="bi bi-clock me-2"></i>5 min baca</span>
+            </div>
+            <h1>5 Manfaat Outbound bagi Karyawan Perusahaan</h1>
+        </div>
+    </header>
+
+    <!-- ARTICLE -->
+    <div class="article-body">
+        <div class="container">
+            <div class="article-content">
+
+                <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=1200&q=80"
+                    alt="Outbound Batu Malang" />
+
+                <p>Outbound bukan sekadar liburan atau acara jalan-jalan biasa. Kegiatan ini merupakan metode pelatihan
+                    yang dirancang secara khusus untuk meningkatkan kualitas sumber daya manusia melalui pengalaman
+                    langsung di alam terbuka. Bagi perusahaan yang ingin membangun tim yang solid dan produktif,
+                    outbound adalah investasi yang sangat berharga.</p>
+
+                <h2>1. Meningkatkan Kerja Sama Tim</h2>
+                <p>Salah satu manfaat terbesar dari kegiatan outbound adalah kemampuannya untuk memperkuat kerja sama
+                    antar anggota tim. Melalui berbagai permainan dan tantangan yang dirancang khusus, setiap peserta
+                    dituntut untuk saling berkomunikasi, berkoordinasi, dan bekerja sama demi mencapai tujuan bersama.
+                </p>
+                <p>Di lingkungan kantor, seringkali komunikasi antar divisi atau antar anggota tim terhambat oleh
+                    sekat-sekat birokrasi. Outbound memecah sekat tersebut dan menciptakan ruang interaksi yang lebih
+                    alami dan spontan.</p>
+
+                <h2>2. Mengembangkan Jiwa Kepemimpinan</h2>
+                <p>Kegiatan outbound memberikan kesempatan bagi setiap individu untuk menunjukkan potensi
+                    kepemimpinannya. Dalam situasi yang menantang dan penuh tekanan, naluri kepemimpinan seseorang akan
+                    teruji secara alamiah.</p>
+
+                <blockquote>
+                    <p>"Leadership is not about being in charge. It is about taking care of those in your charge." —
+                        Simon Sinek</p>
+                </blockquote>
+
+                <p>Melalui simulasi permainan yang melibatkan pengambilan keputusan cepat, peserta belajar untuk
+                    memimpin dengan efektif dan bertanggung jawab atas setiap keputusan yang diambil.</p>
+
+                <h2>3. Menghilangkan Stres dan Kejenuhan</h2>
+                <p>Rutinitas kerja yang monoton dapat menyebabkan stres dan kejenuhan pada karyawan. Outbound menawarkan
+                    perubahan suasana yang segar, jauh dari hiruk-pikuk kantor dan tekanan pekerjaan sehari-hari.</p>
+                <p>Beraktivitas di alam terbuka, menghirup udara segar pegunungan, dan berinteraksi dengan rekan kerja
+                    dalam suasana santai terbukti efektif untuk menurunkan tingkat stres dan meningkatkan kesejahteraan
+                    mental karyawan.</p>
+
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80"
+                    alt="Tim bahagia" />
+
+                <h2>4. Meningkatkan Motivasi dan Produktivitas</h2>
+                <p>Karyawan yang merasa dihargai dan diperhatikan oleh perusahaan cenderung memiliki motivasi kerja yang
+                    lebih tinggi. Dengan mengadakan kegiatan outbound, perusahaan menunjukkan bahwa mereka peduli
+                    terhadap kesejahteraan dan pengembangan karyawannya.</p>
+                <ul>
+                    <li>Peningkatan semangat kerja setelah kegiatan outbound</li>
+                    <li>Hubungan antar karyawan yang lebih erat</li>
+                    <li>Komunikasi yang lebih terbuka di lingkungan kerja</li>
+                    <li>Peningkatan loyalitas terhadap perusahaan</li>
+                </ul>
+
+                <h2>5. Menemukan Potensi Tersembunyi</h2>
+                <p>Setiap individu memiliki potensi yang mungkin belum terlihat dalam konteks pekerjaan sehari-hari.
+                    Outbound menciptakan situasi yang memungkinkan potensi-potensi tersembunyi ini muncul ke permukaan.
+                </p>
+                <p>Seseorang yang biasanya pendiam di kantor mungkin ternyata memiliki jiwa pemimpin yang kuat ketika
+                    dihadapkan pada tantangan di alam terbuka. Atau seorang karyawan yang tampak biasa-biasa saja
+                    ternyata memiliki kreativitas luar biasa dalam memecahkan masalah.</p>
+
+                <h2>Kesimpulan</h2>
+                <p>Outbound adalah investasi yang sangat berharga bagi perusahaan. Manfaatnya tidak hanya dirasakan
+                    dalam jangka pendek, tetapi juga memberikan dampak positif yang berkelanjutan terhadap kinerja tim
+                    dan budaya perusahaan secara keseluruhan. Jadi, tunggu apa lagi? Segera rencanakan kegiatan outbound
+                    untuk tim Anda bersama Batu Outbound!</p>
+
+                <!-- Share -->
+                <div class="share-bar">
+                    <span>Bagikan:</span>
+                    <a href="#" class="share-btn"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="share-btn"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="share-btn"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="share-btn"><i class="bi bi-link-45deg"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RELATED -->
+    <section class="related-section">
+        <div class="container">
+            <h2 style="font-family:var(--font-display);font-size:2.5rem;margin-bottom:2rem;">Artikel Terkait</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <img src="https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8?auto=format&fit=crop&w=800&q=80"
+                            alt="Offroad">
+                        <div class="card-body">
+                            <h5><a href="artikel-offroad-coban-talun.html">Panduan Lengkap Offroad di Coban Talun,
+                                    Batu</a></h5>
+                            <p>Jelajahi medan tangguh hutan pinus dengan Jeep 4x4.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <img src="images/Rafting di Sungai Brantas Batu Malang.webp" alt="Rafting">
+                        <div class="card-body">
+                            <h5><a href="artikel-rafting-batu-malang.html">Kenapa Batu Malang Jadi Lokasi Rafting
+                                    Terbaik?</a></h5>
+                            <p>Aliran sungai yang menantang dan pemandangan yang eksotis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="footer-brand">BATU<span>OUTBOUND</span></div>
+                    <p class="footer-desc">Provider Outdoor & Indoor Training No. 1 di Batu Malang. Solusi profesional
+                        untuk kebutuhan Gathering dan Team Building Anda.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+                        <a href="https://wa.me/62895639068080" class="social-btn"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2 offset-lg-1">
+                    <div class="footer-heading">Tautan Langsung</div>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">Tentang Kami</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="#" class="footer-link">Paket Outbound</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <div class="footer-heading">Hubungi Kami</div>
+                    <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Basecamp Coban Talun, Kota
+                            Batu – Malang, Jawa Timur</span></div>
+                    <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>0895-6390-68080</span>
+                    </div>
+                    <div class="footer-contact-item"><i
+                            class="bi bi-envelope-fill"></i><span>info@batuoutbound.co.id</span></div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-heading">Newsletter</div>
+                    <p style="font-size:.87rem;color:rgba(255,255,255,.4);margin-bottom:.9rem;">Dapatkan info promo
+                        spesial setiap bulannya.</p>
+                    <div class="d-flex gap-2">
+                        <input class="newsletter-input" type="email" placeholder="Alamat Email" />
+                        <button class="btn-newsletter text-nowrap"><i class="bi bi-send-fill"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+                <span>© 2024 Batu Outbound Adventure. Hak cipta dilindungi undang-undang.</span>
+                <div class="d-flex gap-4">
+                    <a href="#" class="footer-link" style="margin:0">Kebijakan Privasi</a>
+                    <a href="#" class="footer-link" style="margin:0">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING -->
+    <div class="floating-btns">
+        <a href="https://wa.me/62895639068080" target="_blank" class="float-wa" title="Chat WhatsApp"><i
+                class="bi bi-whatsapp"></i></a>
+        <div class="float-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top"><i
+                class="bi bi-chevron-up"></i></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 60) { nav.style.background = 'rgba(11,26,15,0.97)'; }
+            else { nav.style.background = 'rgba(11,26,15,0.95)'; }
+            const floatTop = document.querySelector('.float-top');
+            if (floatTop) {
+                if (window.scrollY > 300) { floatTop.classList.add('show'); }
+                else { floatTop.classList.remove('show'); }
+            }
+        });
+    </script>
+</body>
+
+</html>
